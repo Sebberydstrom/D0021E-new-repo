@@ -13,6 +13,10 @@ public class TableEntry {
 		_link=link;
 		_node=node;
 	}
+
+	TableEntry() {
+
+	}
 	
 	protected SimEnt link()
 	{

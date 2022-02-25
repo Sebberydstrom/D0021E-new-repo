@@ -5,11 +5,11 @@ package Sim;
 // number
 
 public class Message implements Event{
-    private NetworkAddr _source;
-    private NetworkAddr _destination;
-    private int _seq=0;
+    public NetworkAddr _source;
+    public NetworkAddr _destination;
+    public int _seq=0;
 
-    Message (NetworkAddr from, NetworkAddr to, int seq)
+    public Message (NetworkAddr from, NetworkAddr to, int seq)
     {
         _source = from;
         _destination = to;

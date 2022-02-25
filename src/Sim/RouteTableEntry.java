@@ -10,6 +10,10 @@ public class RouteTableEntry extends TableEntry{
 	{
 		super(link, node);
 	}
+
+	public RouteTableEntry() {
+		super();
+	}
 	
 	public SimEnt link()
 	{
@@ -20,5 +24,6 @@ public class RouteTableEntry extends TableEntry{
 	{
 		return super.node();
 	}
+
 	
 }

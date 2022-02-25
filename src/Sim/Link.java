@@ -3,10 +3,15 @@ package Sim;
 // This class implements a link without any loss, jitter or delay
 
 
+import Labb3.BindingUpdate;
+import Labb3.SwitchEvent;
+
+import javax.naming.Binding;
+
 public class Link extends SimEnt{
-	protected SimEnt _connectorA=null;
-	protected SimEnt _connectorB=null;
-	private int _now=0;
+	public SimEnt _connectorA=null;
+	public SimEnt _connectorB=null;
+	public int _now=0;
 	
 	public Link()
 	{
@@ -28,9 +33,17 @@ public class Link extends SimEnt{
 	
 	public void recv(SimEnt src, Event ev)
 	{
-		if (ev instanceof Message)
+		if (ev instanceof Message || ev instanceof SwitchEvent || ev instanceof BindingUpdate)
 		{
-			System.out.println("Link recv msg, passes it through");
+			if (ev instanceof SwitchEvent) {
+				System.out.println("Link recv SwitchEvent, passes it through");
+			}
+			if (ev instanceof BindingUpdate) {
+				System.out.println("Link recv BindingUpdate, passes it through");
+			}
+			if (ev instanceof Message) {
+				System.out.println("Link recv msg, passes it through");
+			}
 			if (src == _connectorA)
 			{
 				send(_connectorB, ev, _now);

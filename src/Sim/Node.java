@@ -4,10 +4,10 @@ package Sim;
 // and it count messages send and received.
 
 public class Node extends SimEnt {
-    private NetworkAddr _id;
-    private SimEnt _peer;
-    private int _sentmsg=0;
-    private int _seq = 0;
+    public NetworkAddr _id;
+    public SimEnt _peer;
+    public int _sentmsg=0;
+    public int _seq = 0;
 
 
     public Node (int network, int node)
@@ -29,6 +29,9 @@ public class Node extends SimEnt {
         }
     }
 
+    //public void setNetworkID(int id) {
+    //    _id.set_networkId( id );
+    //}
 
     public NetworkAddr getAddr()
     {
@@ -39,10 +42,10 @@ public class Node extends SimEnt {
     // Just implemented to generate some traffic for demo.
     // In one of the labs you will create some traffic generators
 
-    private int _stopSendingAfter = 0; //messages
-    private int _timeBetweenSending = 10; //time between messages
-    private int _toNetwork = 0;
-    private int _toHost = 0;
+    public int _stopSendingAfter = 0; //messages
+    public int _timeBetweenSending = 10; //time between messages
+    public int _toNetwork = 0;
+    public int _toHost = 0;
 
     public void StartSending(int network, int node, int number, int timeInterval, int startSeq)
     {

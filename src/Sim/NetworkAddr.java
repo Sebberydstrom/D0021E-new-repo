@@ -19,6 +19,10 @@ public class NetworkAddr {
 	{
 		return _networkId;
 	}
+
+	public void set_networkId(int id) {
+		_networkId = id;
+	}
 	
 	public int nodeId()
 	{

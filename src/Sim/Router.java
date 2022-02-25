@@ -5,9 +5,9 @@ package Sim;
 
 public class Router extends SimEnt{
 
-	private RouteTableEntry [] _routingTable;
-	private int _interfaces;
-	private int _now=0;
+	public RouteTableEntry [] _routingTable;
+	public int _interfaces;
+	public int _now=0;
 
 	// When created, number of interfaces are defined
 	
@@ -36,7 +36,7 @@ public class Router extends SimEnt{
 	// the network number in the destination field of a messages. The link
 	// represents that network number is returned
 	
-	private SimEnt getInterface(int networkAddress)
+	public SimEnt getInterface(int networkAddress)
 	{
 		SimEnt routerInterface=null;
 		for(int i=0; i<_interfaces; i++)
@@ -58,6 +58,7 @@ public class Router extends SimEnt{
 	
 	public void recv(SimEnt source, Event event)
 	{
+
 		if (event instanceof Message)
 		{
 			System.out.println("Router handles packet with seq: " + ((Message) event).seq()+" from node: "+((Message) event).source().networkId()+"." + ((Message) event).source().nodeId() );
@@ -65,6 +66,7 @@ public class Router extends SimEnt{
 			System.out.println("Router sends to node: " + ((Message) event).destination().networkId()+"." + ((Message) event).destination().nodeId());
 			send (sendNext, event, _now);
 	
-		}	
+		}
+
 	}
 }

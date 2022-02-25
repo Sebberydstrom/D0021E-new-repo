@@ -3,6 +3,7 @@ package Labb1;
 import Sim.Event;
 import Sim.Link;
 import Sim.SimEnt;
+import Sim.Message;
 
 import java.util.Random;
 import java.lang.Math;
@@ -18,11 +19,11 @@ import java.lang.Math;
 
 public class LossyLink extends Link {
     // The delay time of the link.
-    private double delay = 0;
+    private double delay;
     // Jitter value decides the range that the delay will vary between.
-    private double jitterRange = 0;
+    private double jitterRange;
     // Probability to loose a packet, 1, sets the packet loss probability to 1% and 10 to 10% etc.
-    private double packetProbabilityLoss = 0;
+    private double packetProbabilityLoss;
     // Identification for link, the links name
     private String name;
     // Random number generator.

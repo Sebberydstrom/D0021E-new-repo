@@ -5,6 +5,7 @@ package Labb1;
 import Sim.Router;
 import Sim.SimEngine;
 
+
 public class Run {
 	public static void main (String [] args)
 	{
@@ -33,8 +34,8 @@ public class Run {
 
 		// Create two end hosts that will be
 		// communicating via the router
-		Node host1 = new Node(1,1);
-		Node host2 = new Node(2,1);
+		NodeOne host1 = new NodeOne(1,1);
+		NodeOne host2 = new NodeOne(2,1);
 
 		//Connect links to hosts
 		host1.setPeer(link1);
